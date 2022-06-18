@@ -23,7 +23,7 @@ function jouer(e){
     }
     // si la case cliquée n'est pas vide
     else {
-        console.error("NON !")
+        alert("NON !")
     }
 
 }
