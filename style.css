@@ -1,0 +1,38 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+html
+{
+	background-color: #EEE2D2;
+}
+
+body
+{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+section
+{
+    display: flex;
+    flex-direction: row;
+}
+
+section div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+section div div
+{
+    background-color: red;
+    opacity: 0.8;
+    border: solid black 2px ;
+    width: 150px;
+    height: 150px;
+}
