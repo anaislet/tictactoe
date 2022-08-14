@@ -1,0 +1,74 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+html
+{
+	background-color: #D9D9D9;
+}
+
+header
+{
+    background-color: #F23005;
+    margin-bottom: 50px;
+}
+
+h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 80px;
+    text-align: center;
+    padding: 38px 0;
+    color: #122459;
+}
+
+div#page
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+section#grille
+{
+    display: flex;
+    flex-direction: row;
+    border: solid #122459 5px;
+
+}
+
+section.joueur
+{
+    background-color: #2F2ABF;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    font-family: 'Signika', sans-serif;
+    font-size: 30px;
+    color: #F2BE22;
+    margin: 10px;
+}
+
+section#grille div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+section#grille div div
+{
+    background-color: #F2BE22;
+    border: solid #122459 2px ;
+    width: 150px;
+    height: 90px;
+    color: #F23005;
+    font-size: 90px;
+    line-height: 90px;
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Pacifico', cursive;
+}
