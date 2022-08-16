@@ -17,10 +17,21 @@
             <h1>Tictactoe</h1>
         </header>
         <div id="page">
-            <section class="joueur">
-                <h2>Joueur 1</h2>
-                <div>xo</div>
-                <div>opt</div>
+            <section class="joueur1">
+                <input type="text" id="nomJoueur1" />
+                <div id="symbole1">
+                    <input type="radio" id="panda" name="symbole1" value="🐼" checked />
+                    <label for="panda">🐼</label>
+                    <input type="radio" id="paresseux" name="symbole1" value="🦥" />
+                    <label for="paresseux">🦥</label>
+                    <input type="radio" id="raton" name="symbole1" value="🦝" />
+                    <label for="raton">🦝</label>
+                    <input type="radio" id="abeille" name="symbole1" value="🐝" />
+                    <label for="abeille">🐝</label>
+                    <input type="radio" id="perroquet" name="symbole1" value="🦜" />
+                    <label for="perroquet">🦜</label>
+                </div>
+                <div id="score1">0 point</div>
             </section>
             <section id="grille">
                 <div id="premiereColonne">
@@ -39,11 +50,26 @@
                     <div id="33" class="cliquable"></div>
                 </div>
             </section>
-            <section class="joueur">
-                <h2>Joueur 2</h2>
-                <div>xo</div>
-                <div>opt</div>
+            <section class="joueur2">
+                <input type="text" id="nomJoueur2" />
+                <div id="symbole2">
+                    <input type="radio" id="pasteque" name="symbole2" value="🍉" checked />
+                    <label for="pasteque">🍉</label>
+                    <input type="radio" id="avocat" name="symbole2" value="🥑" />
+                    <label for="avocat">🥑</label>
+                    <input type="radio" id="fondue" name="symbole2" value="🫕" />
+                    <label for="fondue">🫕</label>
+                    <input type="radio" id="cupcake" name="symbole2" value="🧁" />
+                    <label for="cupcake">🧁</label>
+                    <input type="radio" id="cocktail" name="symbole2" value="🍹" />
+                    <label for="cocktail">🍹</label>
+                </div>
+                <div id="score2">0 point</div>
             </section>
+        </div>
+        <div id="popup">
+            <p class=" texte">div pop up</p>
+            <p class="bouton">Recommencer</p>
         </div>
         <script type="text/javascript" src="main.js"></script>
     </body>

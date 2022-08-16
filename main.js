@@ -4,42 +4,61 @@ for (let uneCase of cases){
     uneCase.addEventListener('click', jouer)
 }
 
-let symbole = "X"
+let joueurQuiJoue = 1
 let tours = 0
+let score1 = 0
+let score2 = 0
 
 function jouer(e){
+    const symbole = document.querySelector('input[name="symbole' + joueurQuiJoue + '"]:checked').value
     const laCase = e.target
     // si la case cliquée est vide
     if (laCase.textContent == ""){
         tours = tours + 1
+        const inputs = document.querySelectorAll('div#symbole1 input, div#symbole2 input')
+        for (let input of inputs){
+            input.disabled = true
+        }
         // on remplit la case avec un symbole
         laCase.textContent = symbole
         // on regarde si le joueur qui a joué a gagné
-        if(verifierFinDePartie()){
-            setTimeout(function(){
-                alert("vous avez gagné")
-                remettreZero()
-            }, 100)
+        if(verifierPresenceGagnant()){
+            if (joueurQuiJoue == 1){
+                score1 = score1 + 1
+                const unite = score1 > 1 ? " points" : " point"
+                document.getElementById("score1").innerHTML = score1 + unite
+            }
+            else{
+                score2 = score2 + 1
+                const unite = score2 > 1 ? " points" : " point"
+                document.getElementById("score2").innerHTML = score2 + unite
+            }
+            document.querySelector('div#popup p.texte').innerHTML = "Vous avez gagné joueur " + document.getElementById("nomJoueur" + joueurQuiJoue).value
+            document.getElementById("popup").style.display = 'flex'
         }
-        // on change de joueur donc de symbole
-        if (symbole == "X"){
-            symbole = "O"
+        else if (tours == 9){
+            document.querySelector('div#popup p.texte').innerHTML = "Vous avez tous perdu"
+            document.getElementById("popup").style.display = 'flex'
+        }
+        // on change de joueur
+        if (joueurQuiJoue == 1){
+            joueurQuiJoue = 2
+            document.querySelector("section.joueur2").style.backgroundColor = "#2F2ABF"
+            document.querySelector("section.joueur1").style.backgroundColor = "#277BC0"
         }
         else {
-            symbole = "X"
+            joueurQuiJoue = 1
+            document.querySelector("section.joueur1").style.backgroundColor = "#2F2ABF"
+            document.querySelector("section.joueur2").style.backgroundColor = "#277BC0"
         }
     }
     // si la case cliquée n'est pas vide
     else {
-        alert("NON !")
-    }
-    if (tours == 9){
-        alert("Vous avez tous perdu !")
-        remettreZero()
+        console.log("NON !")
     }
 }
 
-function verifierFinDePartie(){
+function verifierPresenceGagnant(){
     const cases = document.getElementsByClassName('cliquable')
     // première colonne
     if (cases[0].textContent != "" && cases[0].textContent==cases[1].textContent && cases[0].textContent==cases[2].textContent){
@@ -78,10 +97,17 @@ function verifierFinDePartie(){
     }
 }
 
+document.querySelector('div#popup p.bouton').addEventListener('click', remettreZero)
+
 function remettreZero(){
     const cases = document.getElementsByClassName('cliquable')
     for (let uneCase of cases){
         uneCase.textContent = ""
     }
     tours = 0
+    const inputs = document.querySelectorAll('div#symbole1 input, div#symbole2 input')
+    for (let input of inputs){
+        input.disabled = false
+    }
+    document.getElementById("popup").style.display = 'none'
 }
