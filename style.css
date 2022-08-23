@@ -1,3 +1,11 @@
+:root
+{
+    --couleur-fond: #F8ECD1;
+    --couleur-joueur-actif: #AC7D88;
+    --couleur-joueur-inactif: #DEB6AB;
+    --couleur-cases:white;
+}
+
 *
 {
 	margin: 0;
@@ -7,21 +15,22 @@
 
 html
 {
-	background-color: #D9D9D9;
+	background-color: var(--couleur-fond);
 }
+
 
 header
 {
-    background-color: #F23005;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
-h1{
+h1
+{
     font-family: 'Pacifico', cursive;
     font-size: 80px;
     text-align: center;
     padding: 38px 0;
-    color: #122459;
+    color: #85586F;
 }
 
 div#page
@@ -35,20 +44,33 @@ section#grille
 {
     display: flex;
     flex-direction: row;
-    border: solid #122459 5px;
-
 }
 
 section.joueur1, section.joueur2
 {
-    background-color:#277BC0;
+    background-color: var(--couleur-joueur-inactif);
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Pacifico', cursive;
+    border-radius: 10px;
 }
 
 section.joueur1
 {
-    background-color: #2F2ABF;
+    background-color: var(--couleur-joueur-actif);
+}
+
+input[type="text"]
+{
+    margin: 10px;
+    padding: 10px 5px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    color: #85586F;
 }
 
 input[type="radio"]
@@ -58,21 +80,22 @@ input[type="radio"]
 
 label
 {
-    font-size: 30px;
+    font-size: 40px;
+    cursor: pointer;
 }
 
 input[type="radio"]:checked+label
 { 
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
 }
 
-h2
+
+div#score1, div#score2
 {
-    font-family: 'Signika', sans-serif;
-    font-size: 30px;
-    color: #F2BE22;
-    margin: 10px;
+    font-size: 40px;
+    text-align: center;
+    color: white;
 }
 
 section#grille div
@@ -83,28 +106,48 @@ section#grille div
 
 section#grille div div
 {
-    background-color: #F2BE22;
-    border: solid #122459 2px ;
+    background-color: var(--couleur-cases);
     width: 150px;
     height: 90px;
-    color: #F23005;
+    border-radius: 10px;
     font-size: 90px;
     line-height: 90px;
     text-align: center;
     padding: 30px 0;
+    margin: 3px;
     font-family: 'Pacifico', cursive;
 }
 
 div#popup
 {
     display: none;
+    /*a remettre en none*/
+    flex-direction: column;
+    position: absolute;
+	top: 50px;
+	right: 50px;
+	bottom: 50px;
+	left: 50px;
+	background-color: rgba(133, 88, 111, 0.7);
+	justify-content: center;
+	align-items: center;
+    font-family: 'Pacifico', cursive;
 }
 
-div p.bouton
+div#popup p.texte
 {
-    background-color: #122459;
-    color: #D9D9D9;
+    font-size: 60px;
+    margin: 40px;
+    color: white;
+}
+
+div#popup p.bouton
+{
+    background-color: white;
     border-radius: 20px;
+    color: #85586F;
     text-align: center;
-    width: 200px;
+    padding: 3px 30px 15px 30px;
+    font-size: 40px;
+    cursor: pointer;
 }

@@ -37,23 +37,23 @@ function jouer(e){
                     const unite = score2 > 1 ? " points" : " point"
                     document.getElementById("score2").innerHTML = score2 + unite
                 }
-                document.querySelector('div#popup p.texte').innerHTML = "Vous avez gagné " + document.getElementById("nomJoueur" + joueurQuiJoue).value
+                document.querySelector('div#popup p.texte').innerHTML = "Vous avez gagné, " + document.getElementById("nomJoueur" + joueurQuiJoue).value + " !"
                 document.getElementById("popup").style.display = 'flex'
             }
             else if (tours == 9){
-                document.querySelector('div#popup p.texte').innerHTML = "Vous avez tous perdu"
+                document.querySelector('div#popup p.texte').innerHTML = "Vous avez tous perdu !"
                 document.getElementById("popup").style.display = 'flex'
             }
             // on change de joueur
             if (joueurQuiJoue == 1){
                 joueurQuiJoue = 2
-                document.querySelector("section.joueur2").style.backgroundColor = "#2F2ABF"
-                document.querySelector("section.joueur1").style.backgroundColor = "#277BC0"
+                document.querySelector("section.joueur2").style.backgroundColor = "#AC7D88"
+                document.querySelector("section.joueur1").style.backgroundColor = "#DEB6AB"
             }
             else {
                 joueurQuiJoue = 1
-                document.querySelector("section.joueur1").style.backgroundColor = "#2F2ABF"
-                document.querySelector("section.joueur2").style.backgroundColor = "#277BC0"
+                document.querySelector("section.joueur1").style.backgroundColor = "#AC7D88"
+                document.querySelector("section.joueur2").style.backgroundColor = "#DEB6AB"
             }
         }
         // si la case cliquée n'est pas vide
