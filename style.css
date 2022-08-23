@@ -51,7 +51,24 @@ section.joueur1
     background-color: #2F2ABF;
 }
 
-h2{
+input[type="radio"]
+{
+    display: none;
+}
+
+label
+{
+    font-size: 30px;
+}
+
+input[type="radio"]:checked+label
+{ 
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+h2
+{
     font-family: 'Signika', sans-serif;
     font-size: 30px;
     color: #F2BE22;
