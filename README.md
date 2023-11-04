@@ -10,7 +10,7 @@ sudo docker run -p 3009:80 tictactoe
 
 ## Consulter le site depuis le navigateur
 
-http://localhost:3007/
+http://localhost:3009/
 
 ## Commandes utiles
 
